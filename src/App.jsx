@@ -9,7 +9,9 @@ import {
   RiMailDownloadLine,
   RiCheckboxBlankCircleFill,
   RiMenu5Line,
-  RiCloseFill
+  RiCloseFill,
+  RiNotification3Line,
+  RiSearchLine
 } from "react-icons/ri";
 
 export default function App() {
@@ -89,6 +91,29 @@ export default function App() {
         { showMenu ? <RiCloseFill /> : <RiMenu5Line /> }
       </button>
     </sidebar>
+    <header className="fixed pl-[340px] w-full flex items-start justify-between p-8 text-white">
+      <nav className="flex items-center gap-4">
+          <a href="#" className="bg-blue-600 text-white py-2 px-4 rounded-full">Discover</a>
+          <a href="#" className="text-gray-500 py-2 px-4 rounded-full">Browse</a>
+          <a href="#" className="text-gray-500 py-2 px-4 rounded-full">Wish List</a>
+      </nav>
+      <div>
+          <ul className="flex items-center gap-4">
+            <li>
+              <a href="#" className="text-gray-500 text-lg">
+                {"  "}
+                <RiNotification3Line />
+              </a>
+              </li>
+              <li>
+                <form className="relative">
+                  <RiSearchLine className="text-gray-500 absolute top-3 left-1"/>
+                  <input type="text" placeholder="search" className="bg-[#232323] outline-none text-gray-300 pl-8 pr-4 rounded-full" />
+                </form>
+              </li>
+          </ul>
+      </div>
+    </header>
   </div>
   )
 }

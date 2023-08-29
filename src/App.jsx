@@ -11,7 +11,8 @@ import {
   RiMenu5Line,
   RiCloseFill,
   RiNotification3Line,
-  RiSearchLine
+  RiSearchLine,
+  RiArrowRightSFill
 } from "react-icons/ri";
 
 export default function App() {
@@ -24,7 +25,7 @@ export default function App() {
 
   return (
     <div className='bg-[#141414] min-h-screen'>
-      <sidebar className={`bg-[#141414] fixed top-0 w-80 h-full  border-r border-gray-800 p-8 flex flex-col justify-between transition-all lg:left-0 ${showMenu ? "left-0" : "-left-full"}`}>
+      <sidebar className={`bg-[#141414] fixed top-0 w-80 h-full  border-r border-gray-800 p-8 flex flex-col justify-between transition-all lg:left-0 z-50 ${showMenu ? "left-0" : "-left-full"}`}>
         <div>
           {/* Logo */}
           <h1 className="text-gray-300 uppercase font-bold text-2-xl tracking-[5px] mb-10">Logo</h1>
@@ -87,12 +88,12 @@ export default function App() {
       {/* Boton movil */}
       <button 
       onClick={toggleMenu}
-      className="lg:hidden bg-blue-600 text-white fixed bottom-4 right-6 p-2 text-lg rounded-full">
+      className="lg:hidden bg-blue-600 text-white fixed bottom-4 right-6 p-2 text-lg rounded-full z-50">
         { showMenu ? <RiCloseFill /> : <RiMenu5Line /> }
       </button>
     </sidebar>
-    <header className="fixed pl-[340px] w-full flex items-start justify-between p-8 text-white">
-      <nav className="flex items-center gap-4">
+    <header className="fixed lg:pl-[340px] w-full flex flex-col md:flex-row items-center lg:justify-between gap-4 p-8 text-white">
+      <nav className="flex items-center gap-4 order-1 lg:order-none">
           <a href="#" className="bg-blue-600 text-white py-2 px-4 rounded-full">Discover</a>
           <a href="#" className="text-gray-500 py-2 px-4 rounded-full">Browse</a>
           <a href="#" className="text-gray-500 py-2 px-4 rounded-full">Wish List</a>
@@ -102,18 +103,42 @@ export default function App() {
             <li>
               <a href="#" className="text-gray-500 text-lg">
                 {"  "}
-                <RiNotification3Line />
+                <RiNotification3Line />{"  "}
               </a>
               </li>
-              <li>
+              <li className="flex-1">
                 <form className="relative">
-                  <RiSearchLine className="text-gray-500 absolute top-3 left-1"/>
-                  <input type="text" placeholder="search" className="bg-[#232323] outline-none text-gray-300 pl-8 pr-4 rounded-full" />
+                  <RiSearchLine className="text-gray-500 absolute top-3 left-2"/>
+                  <input 
+                  type="text" 
+                  placeholder="Search" 
+                  className="bg-[#232323] outline-none text-gray-300 py-2 pl-8 pr-4 pt-1 rounded-full w-full" />
                 </form>
               </li>
           </ul>
       </div>
     </header>
+
+    {/* Content */}
+    <main className="lg:pl-[340px] p-8 pt-36 ">
+      <div className="grid lg:grid-cols-6">
+        <div className="col-span-5 relative">
+          <img 
+          className="w-full h-[500px] object-cover"
+          src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" />
+          <h1 className="absolute top-4 left-4 text-3xl text-white font-bold">League of legends</h1>
+          <div className="absolute left-0 bottom-0 p-8 max-w-xl">
+            <p className="text-gray-200">Update</p>
+            <h2 className="text-4xl text-white font-bold mb-4">The hunt began</h2>
+            <button className="bg-blue-600 text-white py-4 px-6 rounded-xl flex items-center gap-4 text-lg group">
+              Play for free{" "}
+              <RiArrowRightSFill className="group-hover:translate-x-1 transition-all" />
+            </button>
+          </div>
+        </div>
+        <div className="col-span-1 bg-green-300">Hola2</div>
+      </div>
+    </main>
   </div>
   )
 }

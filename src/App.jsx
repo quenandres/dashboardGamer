@@ -12,7 +12,9 @@ import {
   RiCloseFill,
   RiNotification3Line,
   RiSearchLine,
-  RiArrowRightSFill
+  RiArrowRightSFill,
+  RiArrowRightCircleLine,
+  RiArrowLeftCircleLine
 } from "react-icons/ri";
 
 export default function App() {
@@ -121,6 +123,7 @@ export default function App() {
 
     {/* Content */}
     <main className="lg:pl-[340px] p-8 pt-36 ">
+      {/* Hero */}
       <div className="grid grid-cols-1 md:grid-cols-6 gap-2">
         <div className="md:col-span-5 relative">
           <img 
@@ -206,6 +209,67 @@ export default function App() {
             </li>
           </ul>
         </div>
+      </div>
+      
+      {/* Slide videogames */}
+      <div className="mt-4 mb-6 flex items-center justify-between">
+        <h5 className="text-gray-300 text-2xl">Games on sale</h5>
+        <div className="text-gray-500 text-2xl flex items-center gap-4">
+          <RiArrowLeftCircleLine className="cursor-pointer" />
+          <RiArrowRightCircleLine className="cursor-pointer text-white"/>
+        </div>
+      </div>
+      { /* Videogames */}
+      <div className="grid lg:grid-cols-5">
+        <div className="p-4">
+          <img 
+          className="w-full h-80 object-cover rounded-xl mb-2"
+          src="https://images.pexels.com/photos/2263822/pexels-photo-2263822.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          />
+          <h3 className="text-gray-300 text-lg">Game of the year</h3>
+          <p className="text-gray-500 mb-3">Action Games</p>
+          <span className="text-white">$8.15</span>
+        </div>        
+        <div className="p-4">
+          <img 
+          className="w-full h-80 object-cover rounded-xl mb-2"
+          src="https://images.pexels.com/photos/1174746/pexels-photo-1174746.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          />
+          <h3 className="text-gray-300 text-lg">Game of the year</h3>
+          <p className="text-gray-500 mb-3">Action Games</p>
+          <div className="flex items-center gap-2">
+            <span className="bg-green-400 p-1 text-green-800 rounded-lg">-80%</span>
+            <span className="text-gray-500">$50</span>
+            <span className="text-white">$28.15</span>
+          </div>
+        </div>  
+        <div className="p-4">
+          <img 
+          className="w-full h-80 object-cover rounded-xl mb-2"
+          src="https://images.pexels.com/photos/12458820/pexels-photo-12458820.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          />
+          <h3 className="text-gray-300 text-lg">Game of the year</h3>
+          <p className="text-gray-500 mb-3">Action Games</p>
+          <span className="text-white">$8.15</span>
+        </div>  
+        <div className="p-4">
+          <img 
+          className="w-full h-80 object-cover rounded-xl mb-2"
+          src="https://images.pexels.com/photos/9071473/pexels-photo-9071473.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          />
+          <h3 className="text-gray-300 text-lg">Game of the year</h3>
+          <p className="text-gray-500 mb-3">Action Games</p>
+          <span className="text-white">$8.15</span>
+        </div>  
+        <div className="p-4">
+          <img 
+          className="w-full h-80 object-cover rounded-xl mb-2"
+          src="https://images.pexels.com/photos/1298601/pexels-photo-1298601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+          />
+          <h3 className="text-gray-300 text-lg">Game of the year</h3>
+          <p className="text-gray-500 mb-3">Action Games</p>
+          <span className="text-white">$8.15</span>
+        </div>  
       </div>
     </main>
   </div>
